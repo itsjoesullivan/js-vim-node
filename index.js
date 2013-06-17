@@ -1,13 +1,15 @@
-var Vim = require('js-vim'),
+var Vim = require('../js-vim');
 
 	//Instance
-	vim = new vim(),
+	var vim = new Vim();
 
 	//Create view
-	view = require('./lib/view')(vim),
+	var View = require('./lib/view');
+	var view = new View(vim);
 
 	//Handle keystrokes
-	keys = require('./lib/keys');
+	Keys = require('../keys');
+	var keys = new Keys();
 
 	//Listen for changes. Delta acts as a hint (small change, big change, line change, etc.)
 	vim.on('change', function(delta) {
