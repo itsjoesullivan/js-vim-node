@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "js-vim exposed as a node CLI",
   "main": "index.js",
+	"dependencies": {
+		"js-vim": "*"
+	},
   "scripts": {
     "test": "mocha"
   },

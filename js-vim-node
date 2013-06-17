@@ -1,0 +1,2 @@
+node index.js --columns `tput cols` --lines `tput lines`
+
