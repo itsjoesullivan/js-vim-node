@@ -4,7 +4,9 @@
   "description": "js-vim exposed as a node CLI",
   "main": "index.js",
 	"dependencies": {
-		"js-vim": "*"
+		"js-vim": "*",
+		"colors": "0.6.0-1",
+		"commander":"1.2.0"	
 	},
   "scripts": {
     "test": "mocha"
