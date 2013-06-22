@@ -10,6 +10,7 @@ program
 
 var Vim = require('../js-vim');
 
+
 var tui = require('../terminal-ui');
 
 var Rainbow = require('../rainbow/js/rainbow.js');
@@ -59,6 +60,8 @@ mauve.set({
 
 	//Instance
 	var vim = new Vim();
+
+	require('./lib/commands')(vim);
 
 
 	//Handle keystrokes
