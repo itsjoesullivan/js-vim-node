@@ -69,10 +69,20 @@ mauve.set({
 
 	var _text = '';
 	tui.clear();
+
+	//Let vim know how big screen is.
+	vim.view.cols = program.columns;
+	vim.view.lines = program.lines;
+
 	vim.view.on('change', function() {
+		//Grab the text
 		var text = vim.text();
+		//Do syntax on it.
 		Rainbow.highlightBlockForLanguage(text, 'javascript', function(highlightedText) {
+			//Set as view
 			vim.view.text = highlightedText;
+
+			//Render the text into a view and write it to screen
 			tui.write(vim.view.getText() );
 		});
 	});
