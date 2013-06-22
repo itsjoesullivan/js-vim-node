@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "js-vim exposed as a node CLI",
   "main": "index.js",
+	"bin": { "jsvim" : "./js-vim-node" },
 	"dependencies": {
 		"js-vim": "*",
 		"colors": "0.6.0-1",
