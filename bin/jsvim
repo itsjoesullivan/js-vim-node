@@ -1,1 +1,4 @@
-node index.js --columns `tput cols` --lines `tput lines` --args $@
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P`
+node "$SCRIPTPATH/../index.js" --columns `tput cols` --lines `tput lines` --args $@
+popd > /dev/null
