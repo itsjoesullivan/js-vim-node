@@ -76,6 +76,7 @@ mauve.set({
 	//Let vim know how big screen is.
 	vim.view.cols = program.columns;
 	vim.view.lines = program.lines;
+	var tmpText = '';
 
 	vim.view.on('change', function() {
 		//Grab the text
@@ -84,9 +85,11 @@ mauve.set({
 		Rainbow.highlightBlockForLanguage(text, 'javascript', function(highlightedText) {
 			//Set as view
 			vim.view.text = highlightedText;
-
+			var viewText = vim.view.getText();
+//			console.log('are they the same?',tmpText === viewText);
+			tmpText = viewText;
 			//Render the text into a view and write it to screen
-			tui.write(vim.view.getText() );
+			tui.write( viewText );
 		});
 	});
 
