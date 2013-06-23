@@ -1,2 +1,1 @@
-node index.js --columns `tput cols` --lines `tput lines`
-
+node index.js --columns `tput cols` --lines `tput lines` --args $@
