@@ -11,14 +11,11 @@ program
 var files = process.argv.slice(process.argv.indexOf('--args')+1)
 
 //Main app
-var Vim = require('../js-vim'),
+var Vim = require('js-vim'),
 	//Renderer
-	tui = require('../terminal-ui');
+	tui = require('terminal-ui');
 
 //Syntax highlighter
-var Rainbow = require('../rainbow/js/rainbow.js');
-//Language
-require('../rainbow/js/language/javascript.js')(Rainbow);
 
 //Color scheme
 var mauve = require('mauve');
