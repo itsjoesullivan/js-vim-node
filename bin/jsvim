@@ -1,4 +1,8 @@
-pushd `dirname $0` > /dev/null
-SCRIPTPATH=`pwd -P`
-node "$SCRIPTPATH/../index.js" --columns `tput cols` --lines `tput lines` --args $@
-popd > /dev/null
+
+LINKPATH=$(which jsvim)
+THISRELPATH=`readlink  $LINKPATH`
+SCRIPTPATH=$(echo $LINKPATH | sed s/jsvim//)$THISRELPATH
+SCRIPTPATH=$(echo $SCRIPTPATH | sed s/bin\\/jsvim$/index.js/)
+echo $SCRIPTPATH
+
+node $SCRIPTPATH --columns `tput cols` --lines `tput lines` --args $@
