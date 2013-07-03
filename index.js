@@ -33,7 +33,7 @@ require('./lib/commands')(vim);
 
 
 //Keystrokes
-Keys = require('../keys');
+Keys = require('terminal-keys');
 var keys = new Keys();
 
 //Connect keys to vim instance
