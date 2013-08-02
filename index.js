@@ -20,9 +20,15 @@ mauve.set(scheme);
 
 //Instance
 var vim = new Vim();
+
 //TODO let this be in the constructor
-vim.view.cols = program.columns;
-vim.view.lines = program.lines;
+function setSize() {
+vim.view.cols = process.stdout.columns;
+vim.view.lines = process.stdout.rows;
+}
+process.stdout.on('resize', setSize);
+setSize();
+
 
 //Apply node commands (file write, etc.)
 require('./lib/commands')(vim);
