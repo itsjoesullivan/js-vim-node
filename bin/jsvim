@@ -1,8 +1,9 @@
 
-LINKPATH=$(which jsvim)
-THISRELPATH=`readlink  $LINKPATH`
-SCRIPTPATH=$(echo $LINKPATH | sed s/jsvim//)$THISRELPATH
-SCRIPTPATH=$(echo $SCRIPTPATH | sed s/bin\\/jsvim$/index.js/)
-echo $SCRIPTPATH
+#LINKPATH=$(which jsvim)
+#THISRELPATH=`readlink  $LINKPATH`
+#SCRIPTPATH=$(echo $LINKPATH | sed s/jsvim//)$THISRELPATH
+#SCRIPTPATH=$(echo $SCRIPTPATH | sed s/bin\\/jsvim$/index.js/)
+#echo $SCRIPTPATH
 
-node $SCRIPTPATH --columns `tput cols` --lines `tput lines` --args $@
+#node $SCRIPTPATH --columns `tput cols` --lines `tput lines` --args $@
+node index.js --columns `tput cols` --lines `tput lines` --args $@
