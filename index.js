@@ -3,12 +3,8 @@ var program = require('commander');
 
 program
 	.version('0.0.1')
-	.option('--columns <num>', 'Columns in display', parseInt)
-	.option('--lines <num>', 'Lines in display', parseInt)
-	.option('--args [arguments]', 'Arguments from original command')
 	.parse(process.argv);
 
-var files = process.argv.slice(process.argv.indexOf('--args')+1)
 
 //Main app
 var Vim = require('js-vim'),
@@ -51,6 +47,7 @@ vim.view.on('change', function() {
 
 //Open file if one has been indicated
 
+var files = [];//TODO: make this take cl args
 if(files.length) {
 	vim.exec(':e ' + files.shift() +'\n');
 }
