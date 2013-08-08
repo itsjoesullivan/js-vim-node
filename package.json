@@ -1,9 +1,8 @@
 {
   "name": "js-vim-node",
-  "version": "0.2.2",
+  "version": "0.3.1",
   "description": "js-vim exposed as a node CLI",
-  "main": "index.js",
-	"bin": { "jsvim" : "./bin/jsvim" },
+  "bin": { "jsvim" : "./bin/jsvim" },
 	"dependencies": {
 		"js-vim": "*",
 		"terminal-ui": "*",
@@ -11,6 +10,7 @@
 		"commander":"1.2.0"	
 	},
   "scripts": {
+	  "start": "node index.js",
     "test": "mocha"
   },
   "repository": {
