@@ -63,7 +63,7 @@ if (files.length) {
 if(program.test) {
 	vim.exec('i');
 	vim.exec('hello');
-	if(vim.text() === 'hell') {
+	if(vim.text() === 'hello') {
 		process.exit(0);
 	} else {
 		throw "Text wasn't correct.";
