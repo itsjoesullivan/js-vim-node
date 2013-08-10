@@ -1,10 +1,11 @@
 {
   "name": "js-vim-node",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "description": "js-vim exposed as a node CLI",
   "bin": { "jsvim" : "./bin/jsvim" },
 	"dependencies": {
 		"js-vim": "*",
+		"mauve": "*",
 		"terminal-ui": "*",
 		"terminal-keys": "*",
 		"commander":"1.2.0"	
