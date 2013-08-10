@@ -62,7 +62,7 @@ if (files.length) {
 
 if(program.test) {
 	if(vim) {
-		process.exit(0);
+		process.exit(1);
 	} else {
 		throw "No vim. Failure somewhere."
 	}
