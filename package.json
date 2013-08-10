@@ -7,7 +7,6 @@
     },
     "dependencies": {
         "js-vim": "*",
-        "mauve": "*",
         "terminal-ui": "*",
         "terminal-keys": "*",
         "commander": "1.2.0"
