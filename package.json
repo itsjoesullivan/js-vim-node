@@ -1,27 +1,29 @@
 {
-  "name": "js-vim-node",
-  "version": "0.3.3",
-  "description": "js-vim exposed as a node CLI",
-  "bin": { "jsvim" : "./bin/jsvim" },
-	"dependencies": {
-		"js-vim": "*",
-		"mauve": "*",
-		"terminal-ui": "*",
-		"terminal-keys": "*",
-		"commander":"1.2.0"	
-	},
-  "scripts": {
-	  "start": "node index.js",
-    "test": "mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/itsjoesullivan/js-vim-node.git"
-  },
-  "keywords": [
-    "vim"
-  ],
-  "author": "Joe Sullivan",
-  "license": "BSD",
-  "gitHead": "9abf7c41b51620c143d2119e8bf550bd7cad768a"
+    "name": "js-vim-node",
+    "version": "0.3.3",
+    "description": "js-vim exposed as a node CLI",
+    "bin": {
+        "jsvim": "./bin/jsvim"
+    },
+    "dependencies": {
+        "js-vim": "*",
+        "mauve": "*",
+        "terminal-ui": "*",
+        "terminal-keys": "*",
+        "commander": "1.2.0"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "test": "node index.js --test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/itsjoesullivan/js-vim-node.git"
+    },
+    "keywords": [
+        "vim"
+    ],
+    "author": "Joe Sullivan",
+    "license": "BSD",
+    "gitHead": "9abf7c41b51620c143d2119e8bf550bd7cad768a"
 }
