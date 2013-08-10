@@ -2,14 +2,15 @@ var program = require('commander');
 
 
 program
-	.version('0.0.1')
-	.parse(process.argv);
+    .version('0.0.1')
+	.option('-t, --test', "Run in test mode")
+    .parse(process.argv);
 
 
 //Main app
 var Vim = require('js-vim'),
-	//Renderer
-	tui = require('terminal-ui');
+    //Renderer
+    tui = require('terminal-ui');
 
 //Syntax highlighter
 
@@ -22,9 +23,10 @@ mauve.set(scheme);
 var vim = new Vim();
 
 //TODO let this be in the constructor
+
 function setSize() {
-vim.view.cols = process.stdout.columns;
-vim.view.lines = process.stdout.rows;
+    vim.view.cols = process.stdout.columns;
+    vim.view.lines = process.stdout.rows;
 }
 process.stdout.on('resize', setSize);
 setSize();
@@ -40,7 +42,7 @@ var keys = new Keys();
 
 //Connect keys to vim instance
 keys.fn = function(key) {
-	vim.exec(key);
+    vim.exec(key);
 };
 
 //Clear the terminal screen
@@ -48,12 +50,20 @@ tui.clear();
 
 //Tie tui to vim.view
 vim.view.on('change', function() {
-	tui.write(vim.view.getText());
+    tui.write(vim.view.getText());
 });
 
 //Open file if one has been indicated
 
-var files = [];//TODO: make this take cl args
-if(files.length) {
-	vim.exec(':e ' + files.shift() +'\n');
+var files = []; //TODO: make this take cl args
+if (files.length) {
+    vim.exec(':e ' + files.shift() + '\n');
+}
+
+if(program.test) {
+	if(vim) {
+		process.exit(0);
+	} else {
+		throw "No vim. Failure somewhere."
+	}
 }
